@@ -1,8 +1,17 @@
 import React from 'react';
 import Head from 'next/head';
-import { Container, ThemeProvider } from '@material-ui/core';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { Box, Container, ThemeProvider } from '@material-ui/core';
+import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import Navbar from '../components/navbar';
+
+const useStyles = makeStyles(theme => ({
+  navbarGap: {
+    marginTop: '88px',
+    [theme.breakpoints.down(600)]: {
+      marginTop: '80px'
+    }
+  }
+}));
 
 export default function App({ Component, pageProps }) {
   const theme = createMuiTheme({
@@ -27,6 +36,8 @@ export default function App({ Component, pageProps }) {
     },
   });
 
+  const classes = useStyles();
+
   return (
     <ThemeProvider theme={theme}>
       <Container>
@@ -37,7 +48,7 @@ export default function App({ Component, pageProps }) {
           <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet" />
         </Head>
         <Navbar />
-        <Container style={{ marginTop: '72px' }} />
+        <Box className={classes.navbarGap} />
         <Component {...pageProps} />
       </Container>
     </ThemeProvider>
