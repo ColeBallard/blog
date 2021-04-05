@@ -1,8 +1,9 @@
-import { AppBar, createMuiTheme, IconButton, Toolbar, Typography, Drawer, List, ListItem, ListItemText, ThemeProvider, InputBase, Avatar } from '@material-ui/core';
-import { Menu, Search } from '@material-ui/icons';
-import { makeStyles, fade } from '@material-ui/core/styles';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { AppBar, IconButton, Toolbar, Typography, Drawer, List, ListItem, ListItemText, InputBase } from '@material-ui/core';
+import { Menu, Search } from '@material-ui/icons';
+import { makeStyles, fade, useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -64,29 +65,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Navbar() {
+  const theme = useTheme();
   const classes = useStyles();
-
-  const theme = createMuiTheme({
-    typography: {
-      fontFamily: [
-        'Nunito Sans',
-        'sans-serif'
-      ],
-      h6: {
-        fontWeight: 600
-      }
-    },
-    palette: {
-      primary: {
-        main: '#27242a',
-        contrastText: '#fff'
-      },
-      secondary: {
-        main: '#687176',
-        contrastText: '#fff'
-      }
-    },
-  });
 
   const [state, setState] = React.useState({
     left: false,
@@ -101,47 +81,53 @@ export default function Navbar() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <AppBar>
-        <Toolbar>
-          <IconButton edge="start" onClick={toggleDrawer('left', true)}>
-            <Menu style={{ color: 'white' }} />
-          </IconButton>
-          <Drawer anchor='left' open={state['left']} onClose={toggleDrawer('left', false)} classes={{ paper: classes.paper }}>
-            <List>
+    <AppBar>
+      <Toolbar>
+        <IconButton edge="start" onClick={toggleDrawer('left', true)}>
+          <Menu style={{ color: 'white' }} />
+        </IconButton>
+        <Drawer anchor='left' open={state['left']} onClose={toggleDrawer('left', false)} classes={{ paper: classes.paper }}>
+          <List>
+            <Link href='/'>
               <ListItem button>
                 <ListItemText primary="home" classes={{ primary: classes.listItem }} />
               </ListItem>
+            </Link>
+            <Link href='/categories'>
               <ListItem button>
                 <ListItemText primary="categories" classes={{ primary: classes.listItem }} />
               </ListItem>
+            </Link>
+            <Link href='/about'>
               <ListItem button>
                 <ListItemText primary="about" classes={{ primary: classes.listItem }} />
               </ListItem>
+            </Link>
+            <Link href='/login'>
               <ListItem button>
                 <ListItemText primary="login" classes={{ primary: classes.listItem }} />
               </ListItem>
-            </List>
-          </Drawer>
-          <div className={classes.moonIcon}>
-            <Image src="/moon.png" width={theme.spacing(4)} height={theme.spacing(4)} />
+            </Link>
+          </List>
+        </Drawer>
+        <div className={classes.moonIcon}>
+          <Image src="/moon.png" width={theme.spacing(4)} height={theme.spacing(4)} />
+        </div>
+        <Typography variant='h6' className={classes.title}>blog.coleb</Typography>
+        <div className={classes.search}>
+          <div className={classes.searchIcon}>
+            <Search />
           </div>
-          <Typography variant='h6' className={classes.title}>blog.coleb</Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <Search />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
-        </Toolbar>
-      </AppBar>
-    </ThemeProvider>
+          <InputBase
+            placeholder="Search…"
+            classes={{
+              root: classes.inputRoot,
+              input: classes.inputInput,
+            }}
+            inputProps={{ 'aria-label': 'search' }}
+          />
+        </div>
+      </Toolbar>
+    </AppBar>
   );
 }
