@@ -89,22 +89,22 @@ export default function Navbar() {
         <Drawer anchor='left' open={state['left']} onClose={toggleDrawer('left', false)} classes={{ paper: classes.paper }}>
           <List>
             <Link href='/'>
-              <ListItem button>
+              <ListItem button onClick={toggleDrawer('left', false)}>
                 <ListItemText primary="home" classes={{ primary: classes.listItem }} />
               </ListItem>
             </Link>
             <Link href='/categories'>
-              <ListItem button>
+              <ListItem button onClick={toggleDrawer('left', false)}>
                 <ListItemText primary="categories" classes={{ primary: classes.listItem }} />
               </ListItem>
             </Link>
             <Link href='/about'>
-              <ListItem button>
+              <ListItem button onClick={toggleDrawer('left', false)}>
                 <ListItemText primary="about" classes={{ primary: classes.listItem }} />
               </ListItem>
             </Link>
             <Link href='/login'>
-              <ListItem button>
+              <ListItem button onClick={toggleDrawer('left', false)}>
                 <ListItemText primary="login" classes={{ primary: classes.listItem }} />
               </ListItem>
             </Link>
