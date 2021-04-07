@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, Grid } from '@material-ui/core';
 import HomeCard from '../components/homeCard'
 
