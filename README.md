@@ -14,7 +14,7 @@ Otherwise:
 
 1. Clone the respository.
 ```shell
-https://github.com/ColeBallard/blog
+git clone https://github.com/ColeBallard/blog
 ```
 
 2. Install npm packages.
