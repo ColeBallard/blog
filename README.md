@@ -19,11 +19,15 @@ git clone https://github.com/ColeBallard/blog
 
 2. Install npm packages.
 ```shell
-cd next
-npm init -y
+npm install
 ```
 
-3. Make a pull request.
+3. Run development environment.
+```shell
+npm run dev
+```
+
+4. Make a pull request.
 
 ## **[Contact](https://coleb.io/contact)**
 
