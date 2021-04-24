@@ -3,7 +3,7 @@
 ## Design
 - uses [Next.js](https://nextjs.org/) with [Material-UI](https://material-ui.com/)
 - account creation and logging in with [Express.js](https://expressjs.com/) and [Passport.js](http://www.passportjs.org/)
-- SQL (or noSQL?) database for accounts and comments
+- [mySQL](https://github.com/mysqljs/mysql) database for accounts, JSON object for articles
 - article searching with [Lunr.js](https://lunrjs.com/)
 - [favicon](https://search.creativecommons.org/photos/9894789b-fa61-41cd-be75-585258ce3810)
 
