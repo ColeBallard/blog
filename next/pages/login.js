@@ -1,4 +1,4 @@
-import { Container, TextField, Button, Grid } from '@material-ui/core';
+import { Container, TextField, Button, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
@@ -10,6 +10,13 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     marginBottom: '2ch'
   },
+  linkText: {
+    fontSize: '1.5ch',
+    fontFamily: [
+      'Nunito Sans',
+      'sans-serif'
+    ],
+  }
 }));
 
 export default function Login() {
@@ -20,6 +27,12 @@ export default function Login() {
       <TextField id="email" label="Email" variant="outlined" className={classes.textField} />
       <TextField id="password" label="Password" type="password" variant="outlined" className={classes.textField} />
       <Button>Login</Button>
+      <Link href='/forgotPassword'>
+        <p className={classes.linkText}>Forgot your password?</p>
+      </Link>
+      <Link href='/createAccount'>
+        <p className={classes.linkText}>Don't have an account? Create one.</p>
+      </Link>
     </Container>
   )
 }
