@@ -1,5 +1,6 @@
-import { Container, TextField, Button, Link } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles'
+import Link from 'next/link';
+import { Container, TextField, Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -11,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '2ch'
   },
   linkText: {
+    '&:hover': {
+      backgroundColor: 'grey'
+    },
     fontSize: '1.5ch',
     fontFamily: [
       'Nunito Sans',

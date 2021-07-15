@@ -26,7 +26,7 @@ app.prepare()
     return handle(req, res);
   });
 
-  exp.get('/login',  (req, res)=> {
+  exp.get('/login',  (req, res) => {
     console.log('hey');
     return handle(req, res);
   });
