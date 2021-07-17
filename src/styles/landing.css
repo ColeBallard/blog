@@ -1,0 +1,27 @@
+#container {
+  text-align: center;
+}
+
+#title {
+  margin: 1.5em 0;
+  font-size: 1.5em;
+}
+
+#footer {
+  margin: 1.5em 0;
+}
+
+#website-link:link {
+  font-size: small;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+#website-link:visited {
+  color: black;
+}
+
+#website-link:hover {
+  background-color: grey;
+}
