@@ -21,7 +21,7 @@ npm install
 
 3. Run development environment.
 ```shell
-npm run dev
+npm start
 ```
 
 4. Make a pull request.
