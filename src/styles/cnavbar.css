@@ -1,0 +1,54 @@
+#navbar-container {
+  justify-content: flex-start;
+  line-height: 1.5em;
+}
+
+#navbar-icon {
+  height: 3em;
+  margin-right: 0.5em;
+}
+
+#search-bar {
+  margin: 0 1em;
+  flex: auto;
+}
+
+#navbar-toggle {
+  margin-left: auto;
+}
+
+#collapsed-nav {
+  max-height: 7em;
+  margin-left: auto;
+}
+
+#profile-link {
+  margin: 0 1em;
+}
+
+#user-icon {
+  height: 2em;
+}
+
+#logout-btn {
+  padding: 0.7em 0;
+}
+
+@media only screen and (max-width: 766px) {
+  #search-bar {
+    margin: 0.5em 0;
+  }
+
+  #collapsed-nav {
+    margin: 0;
+    line-height: 1.5em;
+  }
+
+  #profile-link {
+    margin: 0 0;
+  }
+
+  #logout-btn {
+    padding: 0.5rem 0;
+  }
+}
