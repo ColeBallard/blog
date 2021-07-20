@@ -51,7 +51,7 @@ const CNavbar = () => {
                 navbarScroll
               >
                 <Nav.Link id='profile-link' href='#action0'>
-                  <Image src={userData?.imageUrl} id='user-icon' /> {userData?.givenName}
+                  <Image src={userData?.imageUrl} id='user-icon' roundedCircle /> {userData?.givenName}
                 </Nav.Link>
                 <GoogleLogout  
                   clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
