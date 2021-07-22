@@ -16,6 +16,14 @@ const Landing = () => {
 
   const isSignedIn = useSelector(selectSignedIn);
 
+  const getGoogleClientId = async () => {
+    const res = await fetch('/api/googleid');
+    const body = await res.json();
+
+    if (res.status !== 200) throw Error(body.message);
+    return body.id;
+  };
+
   return (
     <div>
       {!isSignedIn && (
@@ -25,7 +33,7 @@ const Landing = () => {
           </div>
           <GoogleLogin
             id='login-button' 
-            clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+            clientId={getGoogleClientId}
             onSuccess={login}
             onFailure={login}
             isSignedIn={true}

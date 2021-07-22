@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
-import md from '../articles/test.md';
 import '../styles/blog.css';
 
 const Blog = () => {
