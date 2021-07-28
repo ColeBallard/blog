@@ -1,8 +1,11 @@
 import React from 'react';
+import axios from 'axios';
 import GoogleLogin from 'react-google-login';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectSignedIn, setSignedIn, setUserData } from '../features/userSlice';
+
+import API from '../app/config';
 
 import '../styles/landing.css';
 
@@ -16,14 +19,6 @@ const Landing = () => {
 
   const isSignedIn = useSelector(selectSignedIn);
 
-  const getGoogleClientId = async () => {
-    const res = await fetch('/api/googleid');
-    const body = await res.json();
-
-    if (res.status !== 200) throw Error(body.message);
-    return body.id;
-  };
-
   return (
     <div>
       {!isSignedIn && (
@@ -33,9 +28,8 @@ const Landing = () => {
           </div>
           <GoogleLogin
             id='login-button' 
-            clientId={getGoogleClientId}
+            clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
             onSuccess={login}
-            onFailure={login}
             isSignedIn={true}
             cookiePolicy={'single_host_origin'}
           />

@@ -2,12 +2,15 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-require('dotenv').config();
+const path = require('path');
+const cors = require('cors');
 
-app.use(express.static(path.resolve(__dirname, './client/build')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cors());
 
-app.get("/api/googleid", (req, res) => {
-  res.json({ id: process.env.GOOGLE_CLIENT_ID });
-});
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+}
 
 app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}.`));
