@@ -33,7 +33,7 @@ npm install
 4. Run development environment.
 
 ```shell
-node run dev
+npm run dev
 ```
 
 ## **[Contact](https://coleb.io/contact)**
