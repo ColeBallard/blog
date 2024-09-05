@@ -36,4 +36,4 @@ npm install
 npm run dev
 ```
 
-## **[Contact](https://coleb.io/contact)**
+## **[Contact](https://github.com/ColeBallard/coleballard.github.io/blob/main/README.md)**
